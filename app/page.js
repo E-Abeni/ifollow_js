@@ -27,12 +27,12 @@ export default function page(){
 	
 	return(
 		<main className="flex flex-row h-screen">
-		<div className="flex flex-col p-7 bg-blue-900 content-center justify-between w-4/12"> 
+		<div className="flex flex-col p-7 bg-blue-900 content-center justify-between w-1/2"> 
 			<h1 className = {clsx(
-				`${cinzel.className} border-solid border-2 rounded-full text-5xl  h-25 italic font-mono text-center`, 
+				`${cinzel.className} border-solid border-2 rounded-full text-5xl w-auto h-25 italic font-mono text-center`, 
 				{
-					"bg-gray-300 p-5 text-black w-auto": status === 0,
-					"bg-white p-5 text-black w-auto" : status !== 0
+					"bg-gray-300 p-5 text-black ": status === 0,
+					"bg-white p-5 text-black " : status !== 0
 				})} onMouseEnter={hovered}
 					onMouseLeave={unhovered}> I-Follow </h1>
 

@@ -18,7 +18,7 @@ export default function FsTable(){
 			</thead>
 			<tbody>
 			
-			{myFiles.map(file => <Ftable file = {file} />)}
+			{myFiles.map(file => <Ftable file = {file} key={file.description} />)}
 			
 			</tbody>
 		</table>
