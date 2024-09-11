@@ -1,22 +1,23 @@
 "use client"
 import SearchTable from "./searchTable"
 import { useSearchParams, usePathname, useRouter } from 'next/navigation';
-import {useState} from 'react'
+
 
 export default function page(){
     const searchParams = useSearchParams();
     const pathname = usePathname();
     const { replace } = useRouter();
-    const [doctors, setDoctors] = useState([])
 
     function handleSearch(term) {
         const params = new URLSearchParams(searchParams);
         if (term) {
             params.set('query', term);
+            
           } else {
             params.delete('query');
           }
         replace(`${pathname}?${params.toString()}`);
+           
       }
 
 
@@ -28,7 +29,7 @@ export default function page(){
                     Search
                 </button>
             </div>
-            <SearchTable doctors={doctors}/>
+            <SearchTable doctor={doctor}/>
         </>
         )
 }
