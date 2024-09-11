@@ -5,12 +5,9 @@ import clsx from 'clsx'
 import {usePathname} from 'next/navigation'
 
 const options = [
-	{name: 'Dashboard', href: "/Patient"},
-	{name: 'My Doctors', href: "/Patient/Doctors"},
-	{name: 'My File', href: "/Patient/Files"},
-	{name: 'Notifications', href: "/Patient/Notifications"},
-	{name: 'Read', href: "/Patient/Read"},
-	{name: 'Tools', href: "/Patient/Tools"}
+	{name: 'Dashboard', href: "/Doctor"},
+	{name: 'My Patients', href: "/Doctor/Patients"},
+	
 ]
 
 

@@ -3,12 +3,13 @@ import Dtable from "./dtable"
 import { Suspense } from 'react';
 
 
-function MyTable(){
-	const tabel = fetchDoctors()
-		.then(doctor => {
-			console.log(doctor)
-			return(
-			<table className="m-10 w-9/12">
+export default async function DsTable(){
+
+	let doctors = await fetchDoctors()
+	
+	return (
+		
+		  <table className="m-10 w-9/12">
 			<thead className="bg-gray-300">
 			<tr className=" ">
 				<th className="border-solid border-gray-300 border-2 p-4"> Profile </th>
@@ -20,24 +21,16 @@ function MyTable(){
 			</tr>
 			</thead>
 			<tbody>
-			
+			<Suspense fallback={<tr><td>Loading...</td></tr>}>
 			{
-				doctor.map(doctor => <Dtable key = "0" doctor = {doctor} />)
+					
+						doctors.map(doctor => <Dtable doctor = {doctor} />)
+					
 			}
-			
+			</Suspense>
 			</tbody>
 		</table>
-		)})
-
-	return tabel
-}
-
-export default function DsTable(){
-	    
-	return (
-		<Suspense fallback={<p>Loading...</p>}>
-		  <MyTable />
-		</Suspense>
+		
 	  );
 
 }

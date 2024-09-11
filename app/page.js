@@ -3,7 +3,7 @@ import {useState} from 'react'
 import clsx from 'clsx'
 import {Cinzel} from 'next/font/google'
 import Image from 'next/image'
-import Login from './tools/login'
+import {Plogin, Dlogin} from './tools/login'
 const cinzel = Cinzel({
 		subsets: ['latin']
 	}) 
@@ -17,12 +17,17 @@ export default function page(){
 	
 	
 	const [status, setStatus] = useState(0);
+	const [isPatient, setIsPatient] = useState(true)
 	
 	function hovered(){
 		setStatus(status + 1);
 	}
 	function unhovered(){
 		setStatus(0);
+	}
+
+	function handleClick(){
+		setIsPatient(!isPatient)
 	}
 	
 	return(
@@ -49,6 +54,9 @@ export default function page(){
 			
 			
 		</div>
-		<Login />
+		<div className="w-full flex flex-col items-center justify-center h-screen bg-gray-200">
+			{isPatient? <Plogin />: <Dlogin/>}
+			<button class="px-4 py-2 my-5 bg-blue-500 hover:bg-blue-600 text-white rounded-md" onClick={handleClick}>{isPatient? "Click here if you are a doctor." : "Click here if you are a patient."}</button>
+		</div>
 		</main>
 )}

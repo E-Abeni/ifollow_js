@@ -6,7 +6,7 @@ export async function GET(request){
 		const searchParams = request.nextUrl.searchParams
   		const username = searchParams.get('username');
 		
-		const query = await sql `SELECT username, password FROM doctors WHERE username=${username};`;
+		const query = await sql `SELECT username, password, doctor_id FROM doctors WHERE username=${username};`;
 	
 		return NextResponse.json(query.rows[0]);
 
