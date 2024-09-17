@@ -36,7 +36,7 @@ export function Plogin(){
 	return(
 		<div className="w-9/12 flex flex-col items-center justify-center">
 			
-			<form className = {` flex flex-col justify-center bg-gray-300 p-10 rounded-3xl w-1/2 border-solid border-2 border-black`} onSubmit={handleSubmit}>
+			<form className = {` flex flex-col justify-center bg-red-300 p-10 rounded-3xl w-1/2 border-solid border-2 border-black`} onSubmit={handleSubmit}>
 			<h2 class="text-2xl font-bold text-center mb-4">Patient's Login</h2>
 				<label className="p-1 mx-4 my-1"> User Name </label>
 				<input className="p-1 my-1 border-solid border-black border-2 rounded-md mx-4 " placeholder="example@example.com" name="uname" required></input>
@@ -85,7 +85,7 @@ export function Dlogin(){
 	
 	return(
 		<div className="w-9/12 flex flex-col items-center justify-center">
-			<form className = {` flex flex-col justify-center bg-gray-300 p-10 rounded-3xl w-1/2 border-solid border-2 border-black`} onSubmit={handleSubmit}>
+			<form className = {` flex flex-col justify-center bg-blue-300 p-10 rounded-3xl w-1/2 border-solid border-2 border-black`} onSubmit={handleSubmit}>
 				<h2 class="text-2xl font-bold text-center mb-4">Doctor's Login</h2>
 				<label className="p-1 mx-4 my-1"> User Name </label>
 				<input className="p-1 my-1 border-solid border-black border-2 rounded-md mx-4 " placeholder="example@example.com" name="uname" required></input>
